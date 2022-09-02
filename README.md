@@ -24,7 +24,7 @@ $ docker run \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
     --volume .../yours.xml:/default.xml \
-    docker-intellij-format:latest \
+    JonasGroeger/docker-intellij-format:1.0.0 \
     /default.xml -r -m '*.java' src
 ```
 
