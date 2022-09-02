@@ -1,6 +1,13 @@
 #!/bin/sh
+set -u
 
 /idea/bin/idea.sh format "$@"
 
-# Workaround: Remove unnecessary config folder created by IntelliJ
-rm -rf '?'
+rm -rf '?' # Workaround: Remove unnecessary config folder created by IntelliJ
+
+FAIL_IF_NONCOMPLIANT="${FAIL_IF_NONCOMPLIANT:-false}"
+if [ "$FAIL_IF_NONCOMPLIANT" = false ]; then
+    exit 0
+fi
+
+exit "$(git diff-files --quiet; echo $?)"

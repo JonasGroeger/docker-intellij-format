@@ -49,7 +49,7 @@ FROM ubuntu:jammy-20220801
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get --yes update && \
-    apt-get install --no-install-recommends --yes openjdk-17-jre-headless && \
+    apt-get install --no-install-recommends --yes openjdk-17-jre-headless git && \
     rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /tmp/idea /idea

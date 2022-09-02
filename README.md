@@ -9,6 +9,9 @@ Note that this **does not do the 'optimize imports' part**. This is something yo
 * `make build`
 * Mount your exported IntelliJ code style `.xml` file to `/default.xml` using `--volume .../yours.xml:/default.xml`
 * Use the below `docker run ...` command below
+* You can set the environment variable `FAIL_IF_NONCOMPLIANT` to `true` to fail if the formatting does not match.
+  In the below example `docker run ...` command, add `-e FAIL_IF_NONCOMPLIANT=true` to do just that.
+  The default is `false`.
 
 ### Example for FIT-Connect
 
