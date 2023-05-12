@@ -2,4 +2,4 @@ help:
 	@cat Makefile
 
 build:
-	docker build -t docker-intellij-format:latest .
+	docker buildx build -t docker-intellij-format:latest .
