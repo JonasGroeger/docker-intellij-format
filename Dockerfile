@@ -1,7 +1,7 @@
 FROM alpine:3.16 as builder
 
 RUN apk add wget tar && \
-    wget https://download-cdn.jetbrains.com/idea/ideaIC-2022.2.1.tar.gz -O /tmp/idea.tar.gz -q && \
+    wget https://download-cdn.jetbrains.com/idea/ideaIC-2023.1.1.tar.gz -O /tmp/idea.tar.gz -q && \
     mkdir /tmp/idea && \
     tar -xf /tmp/idea.tar.gz --strip-components=1 -C /tmp/idea
 
@@ -45,7 +45,7 @@ RUN rm -rf \
         /tmp/idea/lib/ant \
         /tmp/idea/jbr
 
-FROM ubuntu:jammy-20220801
+FROM ubuntu:jammy-20230425
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get --yes update && \
